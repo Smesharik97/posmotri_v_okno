@@ -59,25 +59,11 @@ ol {
   margin: auto;
 }
 
-.search-form {
-  display: flex;
-  justify-content: space-between;
-}
-
-.content__list {
-  height: 298px;
-  overflow: auto;
-}
-
-.content__details {
-  width: 100%;
-  height: 100%;
-}
-
 .result__video-container {
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .result__video {
@@ -86,72 +72,61 @@ ol {
   object-fit: cover;
 }
 
-.content__list {
+.search-form {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
 }
 
-.content__video-card {
-  display: flex;
-  align-items: start;
-}
-
-.content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
-}
-
-.content__video-card-description-container {
-  flex-grow: 1;
-  margin-top: 2px;
-  margin-bottom: 4px;
-  margin-left: 2px;
-}
-
-.result__video-container {
-  position: relative;
-}
-
-.content__list {
-  position: relative;
+.search-form__fieldset {
+  border: none;
 }
 
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
-.title {
-  font-family: "Oswald";
-  font-size: 75px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 94%;
-  margin-bottom: 26px;
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-.content__accent {
-  color: #545050;
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 1px;
 }
 
-.content__card-link {
-  text-decoration: none;
-  color: inherit;
-  margin: 2px;
+.search-form__checkbox-list .search-form__label {
+  cursor: pointer;
 }
 
-.content__video-card-title {
-  font-family: "Oswald";
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 100%;
-  margin-bottom: 6px;
+.search-form__textfield {
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  font-family: inherit;
+  font-size: 18px;
+  width: 225px;
+  height: 27px;
+  color: currentColor;
 }
 
-.content__video-card-description {
-  line-height: 90%;
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
@@ -169,96 +144,44 @@ ol {
   height: 15px;
 }
 
-.search-form__fieldset {
-  border: none;
-}
-
-.search-form__textfield {
-  background-color: transparent;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid white;
-  border-top: 1px solid white;
-  font-family: inherit;
-  font-size: 18px;
-  width: 225px;
-  height: 27px;
-  color: currentColor;
-}
-
-.search-form__fieldset-title {
-  margin-bottom: 5px;
-}
-
-.search-form__checkbox-list {
-  display: flex;
-  gap: 15px;
-}
-
-.search-form__label {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-
-.button {
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  border: 1px solid white;
-  background-color: transparent;
-  color: inherit;
-  height: 34px;
-  cursor: pointer;
-}
-
-.search-form__submit-button {
-  width: 194px;
-  align-self: end;
-}
-
-.more-button {
-  width: 100%;
-}
-
-.search-form__textfield:focus {
-  outline: none;
-}
-
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid white;
-  outline-offset: 1px;
-}
-
-.search-form__textfield:active {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
-.button:active {
-  background-color: #545050;
+.content__details {
+  width: 100%;
+  height: 100%;
 }
 
-.button:hover {
-  text-decoration: underline;
+.title {
+  font-family: "Oswald";
+  font-size: 75px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 94%;
+  margin-bottom: 26px;
 }
 
-.button:focus {
-  outline: none;
+.content__accent {
+  color: #545050;
 }
 
-.button:focus-visible {
-  outline: 1px solid white;
-  outline-offset: 1px;
+.content__list {
+  height: 298px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
 }
 
 .content__card-link {
+  text-decoration: none;
+  color: inherit;
+  margin: 2px;
   display: block;
 }
+
 .content__card-link_current {
   background-color: #545050;
 }
@@ -280,6 +203,69 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__checkbox-list .search-form__label {
+.content__video-card {
+  display: flex;
+  align-items: start;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  margin-left: 2px;
+}
+
+.content__video-card-title {
+  font-family: "Oswald";
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 100%;
+  margin-bottom: 6px;
+}
+
+.content__video-card-description {
+  line-height: 90%;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid white;
+  background-color: transparent;
+  color: inherit;
+  height: 34px;
   cursor: pointer;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: end;
+}
+
+.more-button {
+  width: 100%;
 }
