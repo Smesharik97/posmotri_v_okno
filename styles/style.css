@@ -16,6 +16,7 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
 }
 
 h1,
@@ -45,10 +46,6 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-.page {
-  display: flex;
 }
 
 .content {
@@ -133,7 +130,7 @@ ol {
   width: 19px;
   display: flex;
   height: 19px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
@@ -154,7 +151,7 @@ ol {
 }
 
 .title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-size: 75px;
   font-weight: 700;
   text-transform: uppercase;
@@ -171,8 +168,11 @@ ol {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   position: relative;
+}
+
+.content__list-item:not(:last-of-type) {
+  margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -216,28 +216,35 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 100%;
   margin-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__video-card-description {
   line-height: 90%;
+  max-width: 200px;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .button {
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
-  border: 1px solid white;
+  border: 1px solid currentColor;
   background-color: transparent;
   color: inherit;
   height: 34px;
